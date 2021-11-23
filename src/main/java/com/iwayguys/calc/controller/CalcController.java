@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalcController {
 
+    @GetMapping("/")
+    public ResponseEntity welcomeMsg() {
+        return ResponseEntity.ok("Welcome to Calculator API!");
+    }
+
     @GetMapping("/calc/add")
     public ResponseEntity add(@RequestParam int val1, @RequestParam int val2) {
         System.out.println("Val1: " + val2 + ", Val2: " + val2);
