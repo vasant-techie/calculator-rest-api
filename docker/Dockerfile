@@ -20,7 +20,7 @@ RUN mvn dependency:go-offline
 COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
-FROM openjdk:11-jdk
+FROM public.ecr.aws/docker/library/openjdk:11
 COPY --from=0 /build/target/calc-rest-api-1.0.jar /app/target/calc-rest-api-1.0.jar
 
 EXPOSE 8081
